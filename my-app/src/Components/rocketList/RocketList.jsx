@@ -1,26 +1,37 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Rocket from '../rocket/Rocket';
+import fetchRocketsAPI from '../../api/spacexdata';
 
 const RokectsList = () => {
+  const dispatch = useDispatch();
+  const rocketsData = useSelector((state) => state.rocketsReducer);
 
-    const keys = [
-        { id: 1},
-        { id: 2},
-        { id: 3},
-        { id: 4},
-        { id: 5},
-    ]
-    const rockets = keys.map((rocket) => ( 
-        <li key={rocket.id}>
-            <Rocket />
-        </li>
-    ))
+  useEffect(() => {
+    if (!rocketsData.isDataStored) {
+      dispatch(fetchRocketsAPI());
+    }
+  }, []);
 
-    return (
-        <ul>
-            {rockets}
-        </ul>
-    );
-}
+  const rokectsList = rocketsData.data;
+  let rockets = [];
+  if (rokectsList) {
+    rockets = rokectsList.map((item) => (
+      <li key={item.id}>
+        <Rocket
+          description={item.description}
+          image={item.image}
+          name={item.rocket_name}
+        />
+      </li>
+    ));
+  }
+
+  return (
+    <ul>
+      {rockets}
+    </ul>
+  );
+};
 
 export default RokectsList;

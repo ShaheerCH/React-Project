@@ -13,11 +13,15 @@ export default function Header() {
       <nav>
         <ul>
           <li>
-            <NavLink to="rockets" className={(navData) => (navData.isActive ? 'active-style' : 'none')}>
+            <NavLink to="/" className={(navData) => (navData.isActive ? 'active-style' : 'none')}>
               Rockets
             </NavLink>
           </li>
-          <li>Missions</li>
+          <li>
+            <NavLink to="missions" className={(navData) => (navData.isActive ? 'active-style' : 'none')}>
+              Missions
+            </NavLink>
+          </li>
           <li>
             <NavLink to="my-profile" className={(navData) => (navData.isActive ? 'active-style' : 'none')}>
               My Profile
