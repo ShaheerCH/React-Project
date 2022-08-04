@@ -1,17 +1,18 @@
-import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Header from './Components/header/Header';
-import Profile from './Components/profile/Profile';
+import { Routes, Route } from 'react-router-dom';
+import Nav from './components/NavBar/Nav';
+import MyProfile from './components/my-profile/MyProfile';
+import Missions from './components/missions/Missions';
 
 function App() {
   return (
-    <>
-      <Header />
-      <div className="App" />
+    <div className="App">
+      <Nav />
       <Routes>
-        <Route path="my-profile" element={<Profile />} />
+        <Route path="/missions" element={<Missions />} />
+        <Route path="/profile" element={<MyProfile />} />
       </Routes>
-    </>
+    </div>
   );
 }
 
