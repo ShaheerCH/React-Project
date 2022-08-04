@@ -1,18 +1,15 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Rocket from '../rocket/Rocket';
-import fetchRocketsAPI from '../../api/spacexdata';
-
+import { getRocketsDispatcher } from '../../redux/rockets';
 const RokectsList = () => {
   const dispatch = useDispatch();
   const rocketsData = useSelector((state) => state.rocketsReducer);
-
   useEffect(() => {
     if (!rocketsData.isDataStored) {
-      dispatch(fetchRocketsAPI());
+      dispatch(getRocketsDispatcher());
     }
   }, []);
-
   const rokectsList = rocketsData.data;
   let rockets = [];
   if (rokectsList) {
@@ -22,16 +19,16 @@ const RokectsList = () => {
           description={item.description}
           image={item.image}
           name={item.rocket_name}
+          id={item.id}
+          reserved={item.reserved}
         />
       </li>
     ));
   }
-
   return (
     <ul>
       {rockets}
     </ul>
   );
 };
-
 export default RokectsList;

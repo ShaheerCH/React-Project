@@ -26,7 +26,14 @@
 .image_container img {
     width: 300px;
   }
-  
+  .reserved_tag {
+    background-color: #18a2b8;
+    color: #fff;
+    border-radius: 4px;
+    padding: 0.1em 0.3em;
+    margin-right: 5px;
+  }
+
   .info_container {
     height: 80%;
     margin-left: 10px;
@@ -42,4 +49,9 @@
   color: #fff;
   padding: 1em 1.5em;
   border-radius: 4px;
+}
+
+.cancel_reserv_btn {
+  background: none;
+  color: #6d757d;
 }

@@ -1,9 +1,8 @@
 import axios from 'axios';
-import { storeRockets } from '../redux/rockets';
 
 const rocketAPI = 'https://api.spacexdata.com/v3/rockets';
 
-const fetchRocketsAPI = () => async (dispatch) => {
+export const fetchRocketsAPI = async () => {
   const getData = await axios.get(rocketAPI);
   const res = getData.data;
   const Rockets = [];
@@ -14,9 +13,10 @@ const fetchRocketsAPI = () => async (dispatch) => {
     obj.description = item.description;
     const firstImage = item.flickr_images[0];
     obj.image = firstImage;
+    obj.reserved = false;
     Rockets.push(obj);
   });
-  dispatch(storeRockets(Rockets));
+  return Rockets;
 };
 
 export default fetchRocketsAPI;
