@@ -26,8 +26,8 @@ const Rocket = ({
         <img src={image} alt="rockect" />
       </div>
       <div className="info_container">
-        <h3>{name}</h3>
-        <p>
+        <h3 className="rocket-title">{name}</h3>
+        <p className="description">
           {reserved && (<span className="reserved_tag">Reserved</span>)}
           {description}
         </p>

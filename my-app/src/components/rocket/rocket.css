@@ -15,16 +15,25 @@
   color: #007bff;
 }
 
+.Rockets {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
 .rocket_container {
   display: flex;
-  align-items: flex-start;
-  margin: 30px auto;
-  width: 80vw;
-  height: 25vh;
+  margin: 0 30px;
+  flex-direction: row;
+}
+
+.rocket-title {
+  margin: 8px 0;
 }
 
 .image_container img {
   width: 300px;
+  height: 230px;
 }
 
 .reserved_tag {
@@ -37,11 +46,17 @@
 
 .info_container {
   height: 80%;
-  margin-left: 10px;
+  margin-left: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-evenly;
+  gap: 10px;
+}
+
+.description {
+  margin: 0;
+  padding-bottom: 10px;
 }
 
 .info_container button {

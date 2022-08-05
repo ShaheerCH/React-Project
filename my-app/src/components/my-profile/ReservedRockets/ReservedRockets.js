@@ -8,9 +8,9 @@ export default function ReservedRockets() {
   return (
     <section className="rockets-section">
       <h2>My Rockets</h2>
-      <ul>
+      <ul className="reserve">
         {reservedRockets.map((rocket) => (
-          <li key={rocket.id}>
+          <li className="reserve-list" key={rocket.id}>
             {rocket.rocket_name}
           </li>
         ))}

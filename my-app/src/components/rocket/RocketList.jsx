@@ -27,7 +27,7 @@ const RokectsList = () => {
     ));
   }
   return (
-    <ul>
+    <ul className="Rockets">
       {rockets}
     </ul>
   );

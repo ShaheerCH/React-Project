@@ -17,10 +17,22 @@ h2 {
 }
 
 .list {
-  margin-top: 40px;
+  margin-top: 35px;
 }
 
 .list-item {
+  width: 200px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.reserve {
+  margin-top: 35px;
+}
+
+.reserve-list {
   width: 200px;
   font-size: 14px;
   font-weight: 500;
