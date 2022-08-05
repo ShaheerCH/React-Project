@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { bookRocket, cancelRocketBooking } from '../../redux/rockets';
+import { bookRocket, cancelRocketBooking } from '../../redux/rockets/rockets';
 import './rocket.css';
 
 const Rocket = ({
